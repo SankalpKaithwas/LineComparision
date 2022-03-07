@@ -6,7 +6,7 @@ namespace Line_Comparision
     {
         static void Main(string[] args)
         {
-            //UC2 Equality check for two lines
+            //UC3 Comparisions of two lines
             Console.WriteLine("Welcome to Line Comparision Computation Program");
             Console.WriteLine();
             Console.WriteLine("Enter the coordinates for first line: ");
@@ -28,8 +28,27 @@ namespace Line_Comparision
             int y4 = int.Parse(Console.ReadLine());
 
             double line2 = Math.Sqrt((Math.Pow((x4 - x3), 2)) + Math.Pow((y4 - y3), 2));
-            Console.WriteLine("Line second length: " + Math.Round(line2, 3));
-            Console.WriteLine("Are both lines equal: " + line1.Equals(line2));
+            Console.WriteLine("Line two length: " + Math.Round(line2, 3));
+            Console.WriteLine();
+
+            // using CompareTo method
+            int lineStatus = line1.CompareTo(line2);          
+
+            if (lineStatus > 0)
+            {
+                Console.WriteLine("Line one is greater than line two");
+            }
+            else if (lineStatus < 0)
+            {
+                Console.WriteLine("Line two is greater than line one");
+            }
+            else
+            {
+                Console.WriteLine("Line one is equal to line two");
+
+            }
+
+
 
 
         }
